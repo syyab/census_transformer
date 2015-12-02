@@ -11,14 +11,20 @@ There are five datasets besides the ACS data used to accomplish this:
 
 ## Files
 2010_Census_Tract_to_2010_PUMA.txt: State - Census Tract - Puma10: https://www.census.gov/geo/maps-data/data/centract_rel.html
+
 us2010trf.txt: Census Tract - Pop: https://www.census.gov/geo/maps-data/data/tract_rel_download.html
-            		  headers: https://www.census.gov/geo/maps-data/data/tract_rel_layout.html
+	headers: https://www.census.gov/geo/maps-data/data/tract_rel_layout.html
+
 national_county.txt: State Name - State FIPS - County FIPS - County Name: https://www.census.gov/geo/reference/codes/cou.html
+
 puma2k_puma2010.csv: State - puma00 - puma10 - proportion of puma10 in puma00: http://mcdc.missouri.edu/data/corrlst/puma2k_puma2010.csv
-      !!NOTE (If downloading from site): must remove second row (the detailed descriptions) for script to work!!
+
+	!!NOTE (If downloading from site): must remove second row (the detailed descriptions) for script to work!!
+
 state_county_ids.csv: Custom State ID - State - Custom County ID - County
 
 NewPumaDist.R: generates the puma to county distributions for use in duplicating the census data. 
+
 transform_acs.py: reads the acs file and generates the transformed dataset.
 
 ## Using the script:
