@@ -28,7 +28,8 @@ NewPumaDist.R: generates the puma to county distributions for use in duplicating
 transform_acs.py: reads the acs file and generates the transformed dataset.
 
 ## Using the script:
-Download the ACS file you want to transform (e.g. ss13pnh for 2013 5-year data for new hampshire) to the same directory
-Run the R file NewPumaDist.R. It will ask for a 2 digit year and state abbrevation or state fips code. 
+Download the ACS file you want to transform (e.g. ss13pnh for 2013 5-year data for new hampshire) to the same directory. Files can be found at http://www2.census.gov/
 
 If you want to hold your acs files in a different directory, you need to alter the read in generate_output in the python file and generate_final_output in the R file.
+
+Run the R file NewPumaDist.R. It will ask for a 2 digit year and state abbrevation or state fips code and generate the file.
