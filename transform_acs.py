@@ -1,6 +1,5 @@
 import csv
 import sys
-from pprint import pprint
 
 def create_puma_dict():
 	full_puma_dict = {"puma00_dict": {}, "puma10_dict": {}}
@@ -60,15 +59,20 @@ def generate_output(state, year):
 
 		for row in r[1:]:
 			pwgtp = int(row[col_names["PWGTP"]])
+
+			if "PUMA" in col_names.keys():
+				puma = str(int(row[col_names["PUMA"]]))
+				puma_type = "puma00_dict"
 			
-			if int(row[col_names["PUMA10"]]) < 0:
+			elif int(row[col_names["PUMA10"]]) < 0:
 				puma = str(int(row[col_names["PUMA00"]]))
 				puma_type = "puma00_dict"
-				county_dict = puma_dict[puma_type][puma]
+				
 			else:
 				puma = str(int(row[col_names["PUMA10"]]))
 				puma_type = "puma10_dict"
-				county_dict = puma_dict[puma_type][puma]
+
+			county_dict = puma_dict[puma_type][puma]
 
 			for county, proportion in county_dict.items():
 				num_rows = pwgtp * proportion
